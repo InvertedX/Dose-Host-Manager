@@ -1,0 +1,19 @@
+{
+  "name": "Dose",
+  "description": "Simplified Host Manager",
+  "version": "0.5.1-alpha",
+  "main": "./main.js",
+  "author": {
+    "name": "Sarath kumar",
+    "email": "sarathkumars677@gmail.com"
+  },
+  "dependencies": {
+    "react-dom": "latest",
+    "react": "latest",
+    "react-redux": "latest",
+    "redux": "latest",
+    "semantic-ui-react": "latest",
+    "electron": "latest",
+    "redux-logger": "latest"
+  }
+}

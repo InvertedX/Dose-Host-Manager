@@ -1,0 +1,148 @@
+{
+  "name": "Dose",
+  "description": "Simplified Host Manager",
+  "version": "0.5.1-alpha",
+  "main": "build/main.js",
+  "build": {
+    "productName": "Dose",
+    "appId": "com.zealmotion.dosehost",
+    "category": "public.app-category.tools",
+    "dmg": {
+      "contents": [
+        {
+          "x": 410,
+          "y": 150,
+          "type": "link",
+          "path": "/Applications"
+        },
+        {
+          "x": 130,
+          "y": 150,
+          "type": "file"
+        }
+      ]
+    },
+    "files": [
+      "build/"
+    ],
+    "win": {
+      "target": "nsis"
+    },
+    "linux": {
+      "target": [
+        "deb",
+        "AppImage"
+      ]
+    }
+  },
+  "license": "MIT",
+  "keywords": [
+    "electron",
+    "/etc/host",
+    "react",
+    "redux",
+    "webpack"
+  ],
+  "bugs": "https://github.com/InvertedX/Dose-Host-Manager/issues",
+  "scripts": {
+    "clean:build": "rimraf build",
+    "build:html": "node ./config/buildHtml.js",
+    "prestart": "npm run clean:build",
+    "dev": "webpack-dashboard -c green -t Dose-Dev-Server -- node dev-server.js ",
+    "electron-dev": "cross-env NODE_ENV=production electron ./src/main.js",
+    "prebuild": "npm run clean:build",
+    "pack": "cross-env NODE_ENV=production npm run build && npm run build:html&& build --win",
+    "packlin": "cross-env NODE_ENV=production npm run build && npm run build:html&& build ",
+    "build": "cross-env NODE_ENV=production webpack --config ./config/webpack.config.production.js --progress",
+    "build-electron": "cross-env NODE_ENV=production webpack --config ./config/webpack.config.electron.js --progress"
+  },
+  "devDependencies": {
+    "autoprefixer": "latest",
+    "babel": "6.5.2",
+    "babel-cli": "6.14.0",
+    "babel-core": "6.14.0",
+    "babel-eslint": "6.1.2",
+    "babel-loader": "6.2.5",
+    "babel-plugin-transform-decorators-legacy": "1.3.4",
+    "babel-plugin-transform-flow-strip-types": "6.14.0",
+    "babel-plugin-transform-react-constant-elements": "6.9.1",
+    "babel-plugin-transform-react-remove-prop-types": "0.2.9",
+    "babel-plugin-transform-runtime": "6.15.0",
+    "babel-preset-es2015": "6.14.0",
+    "babel-preset-react": "6.11.1",
+    "babel-preset-stage-0": "6.5.0",
+    "babili-webpack-plugin": "0.0.10",
+    "chai": "3.5.0",
+    "chai-jquery": "2.0.0",
+    "cheerio": "0.22.0",
+    "colors": "1.1.2",
+    "copy-webpack-plugin": "3.0.1",
+    "cross-env": "2.0.1",
+    "css-loader": "0.24.0",
+    "devtron": "1.4.0",
+    "electron": "^1.4.15",
+    "electron-builder": "^12.2.2",
+    "electron-devtools-installer": "^2.0.1",
+    "electron-packager": "^8.5.1",
+    "electron-winstaller": "2.5.2",
+    "eslint": "3.4.0",
+    "eslint-plugin-flowtype": "2.11.4",
+    "eslint-plugin-react": "6.2.0",
+    "express": "latest",
+    "extract-text-webpack-plugin": "2.0.0-beta.3",
+    "file-loader": "0.9.0",
+    "flow-bin": "0.31.1",
+    "http-server": "0.9.0",
+    "jquery": "3.1.0",
+    "jscs": "3.0.7",
+    "jsdom": "9.4.5",
+    "mocha": "3.0.2",
+    "node-sass": "3.8.0",
+    "postcss-loader": "0.11.1",
+    "react-addons-test-utils": "15.3.1",
+    "redbox-react": "1.3.0",
+    "redux-devtools": "3.3.1",
+    "redux-devtools-dock-monitor": "1.1.1",
+    "redux-devtools-log-monitor": "1.0.11",
+    "redux-immutable-state-invariant": "1.2.3",
+    "redux-slider-monitor": "1.0.7",
+    "rimraf": "2.5.4",
+    "sass-loader": "4.0.1",
+    "style-loader": "0.13.1",
+    "url-loader": "0.5.7",
+    "webpack": "2.1.0-beta.21",
+    "webpack-dashboard": "0.1.8",
+    "webpack-dev-middleware": "1.6.1",
+    "webpack-hot-middleware": "2.12.2",
+    "webpack-merge": "0.14.1"
+  },
+  "directories": {
+    "buildResources": "resources",
+    "output": "release"
+  },
+  "bin": {
+    "electron": "./node_modules/.bin/electron"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/InvertedX/Dose-Host-Manager.git"
+  },
+  "author": {
+    "name": "Sarath Kumar",
+    "email": "sarathkumars677@gmail.com",
+    "url": "https://github.com/InvertedX"
+  },
+  "dependencies": {
+    "babel-runtime": "6.11.6",
+    "lodash": "4.15.0",
+    "react": "15.3.1",
+    "react-dom": "15.3.1",
+    "react-redux": "4.4.5",
+    "react-router": "2.7.0",
+    "redux": "3.5.2",
+    "redux-logger": "2.8.1",
+    "redux-thunk": "2.2.0",
+    "semantic-ui-react": "0.64.7",
+    "semantic:ui-css": "2.0.7"
+  }
+}
